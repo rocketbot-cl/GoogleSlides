@@ -1,0 +1,1535 @@
+{
+  "author": "Corina Suárez",
+  "description": "Module to use Google Slides | Módulo para usar Google Slides",
+  "description_lang":{
+    "en": "This module allows you to create, write and update Google Slides. You can add or remove slides and text on them; download the presentation in various formats; and more.",
+    "es": "Este módulo le permite crear, escribir y actualizar presentaciones de Google. Puede agregar o eliminar diapositivas y texto en ellas; descargar la presentación en varios formatos; y más.",
+    "pr": "Este módulo permite criar, escrever e atualizar Apresentações Google. Você pode adicionar ou remover slides e texto neles; baixe a apresentação em vários formatos; e mais."
+  },
+  "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "http://rocketbot.com",
+  "linux": true,
+  "windows": true,
+  "mac": true,
+  "docker": true,
+  "name": "GoogleSlides",
+  "dependencies": {
+    "google-api-python-client": "2.108.0",
+    "google-auth-oauthlib": "1.1.0",
+    "google-auth": "2.23.4"
+  },
+  "title": {
+    "en": "Google Slides",
+    "es": "Google Slides",
+    "pr": "Google Slides"
+  },
+  "icon": "data:image/png;base64,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",
+  "children": [
+    {
+      "en": {
+        "title": "Setup G-Suite credentials",
+        "description": "Get permissions to handle Google Slides with Rocketbot",
+        "title_options": null,
+        "options": null
+      },
+      "es": {
+        "title": "Configurar credenciales G-Suite",
+        "description": "Obtiene los permisos para manejar Google Slides con Rocketbot",
+        "title_options": "Seleccione una opción",
+        "options": null
+      },
+      "pr": {
+        "title": "Configurar credenciais G-Suite",
+        "description": "Obtém permissão para trabalhar no Google Slides com o Rocketbot",
+        "title_options": "Seleccione una opción",
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "file_select",
+            "placeholder": {
+              "es": "C:/ruta/a/credenciales.json",
+              "en": "C:/path/to/credentials.json",
+              "pr": "C:/caminho/credenciais.json"
+            },
+            "title": {
+              "es": "Ruta",
+              "en": "Path",
+              "pr": "Caminho"
+            },
+            "id": "credentials_path",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": "session",
+            "title": {
+              "en": "Session",
+              "es": "Session",
+              "pr": "Session"
+            },
+            "help": {
+              "es": "Identificador de sesión (Opcional)",
+              "en": "Session ID (Optional)",
+              "pr": "ID da sessão (Opcional)"
+            },
+            "id": "session",
+            "css": "col-md-6"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
+            "title": {
+              "es": "Variable donde se guardará el resultado",
+              "en": "Variable where the result will be saved:",
+              "pr": "Variável onde o resultado será salvo:"
+            },
+            "help": {
+              "es": "Nombre de variable sin {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
+            },
+            "id": "result",
+            "css": "col-md-8"
+          }
+        ]
+      },
+      "video_youtube": "aMV6cXPMMSo",
+      "icon": "data:image/png;base64,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",
+      "module": "GoogleSuite",
+      "module_name": "GoogleSlides",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": true
+    },
+    {
+      "en": {
+        "title": "New Presentation",
+        "description": "Create a new Google Slides presentation with Rocketbot",
+        "title_options": null,
+        "options": null
+      },
+      "es": {
+        "title": "Nueva Presentación",
+        "description": "Crea una nueva presentación de Google Slides con Rocketbot",
+        "title_options": null,
+        "options": null
+      },
+      "pr": {
+        "title": "Nova Apresentação",
+        "description": "Crie uma nova apresentação do Google Slides com Rocketbot",
+        "title_options": null,
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Título",
+              "en": "Title",
+              "pr": "Titulo"
+            },
+            "title": {
+              "es": "Titulo de la presentación",
+              "en": "Title of presentation",
+              "pr": "Título da apresentação"
+            },
+            "id": "title",
+            "css": "col-md-10"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
+            "title": {
+              "es": "Variable donde se guardará el ID:",
+              "en": "Variable where the ID will be saved:",
+              "pr": "Variável onde o ID será salvo:"
+            },
+            "help": {
+              "es": "Nombre de variable sin {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
+            },
+            "id": "result_var",
+            "css": "col-md-10"
+          },
+          {
+            "type": "input",
+            "placeholder": "session",
+            "title": {
+              "en": "Session",
+              "es": "Session",
+              "pr": "Session"
+            },
+            "help": {
+              "es": "Identificador de sesión (Opcional)",
+              "en": "Session ID (Optional)",
+              "pr": "ID da sessão (Opcional)"
+            },
+            "id": "session",
+            "css": "col-md-6"
+          }
+        ]
+      },
+      "video_youtube": "aMV6cXPMMSo",
+      "icon": "data:image/png;base64,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",
+      "module": "createPresentation",
+      "module_name": "GoogleSlides",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": true
+    },
+    {
+      "en": {
+        "title": "Add blank slide",
+        "description": "Add a new slide to your Google Slides presentation",
+        "title_options": null,
+        "options": null
+      },
+      "es": {
+        "title": "Agregar diapositiva en blanco",
+        "description": "Agrega una nueva diapositiva a tu presentación de Google Slides",
+        "title_options": null,
+        "options": null
+      },
+      "pr": {
+        "title": "Adicionar slide em branco",
+        "description": "Adicione um novo slide à sua apresentação do Apresentações Google",
+        "title_options": null,
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
+              "en": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
+              "pr": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE"
+            },
+            "title": {
+              "es": "ID de la presentación",
+              "en": "ID of presentation",
+              "pr": "ID da apresentação"
+            },
+            "id": "id",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
+            "title": {
+              "es": "Variable donde se guardará el resultado:",
+              "en": "Variable where the result will be saved:",
+              "pr": "Variável onde o resultado será salvo:"
+            },
+            "help": {
+              "es": "Nombre de variable sin {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
+            },
+            "id": "result",
+            "css": "col-md-10"
+          }
+        ]
+      },
+      "video_youtube": "aMV6cXPMMSo",
+      "icon": "data:image/png;base64,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",
+      "module": "addBlankSlide",
+      "module_name": "GoogleSlides",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": true
+    },
+    {
+      "en": {
+        "title": "Add layout slide",
+        "description": "Add a new slide with title and body to your Google Slides presentation",
+        "title_options": null,
+        "options": null
+      },
+      "es": {
+        "title": "Agregar diapositiva prediseñada",
+        "description": "Agrega una nueva diapositiva con título y cuerpo a tu presentación de Google Slides",
+        "title_options": null,
+        "options": null
+      },
+      "pr": {
+        "title": "Adicionar slide de layout",
+        "description": "Adicione um novo slide com título e corpo à sua apresentação do Apresentações Google",
+        "title_options": null,
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
+              "en": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
+              "pr": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE"
+            },
+            "title": {
+              "es": "ID de la presentación",
+              "en": "ID of presentation",
+              "pr": "ID da apresentação"
+            },
+            "id": "id",
+            "css": "col-md-10"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
+            "title": {
+              "es": "Variable donde se guardará el resultado:",
+              "en": "Variable where the result will be saved:",
+              "pr": "Variável onde o resultado será salvo:"
+            },
+            "help": {
+              "es": "Nombre de variable sin {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
+            },
+            "id": "result_var",
+            "css": "col-md-10"
+          }
+        ]
+      },
+      "video_youtube": "aMV6cXPMMSo",
+      "icon": "data:image/png;base64,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",
+      "module": "addLayoutSlide",
+      "module_name": "GoogleSlides",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": true
+    },
+    {
+      "en": {
+        "title": "Delete Presentation",
+        "description": "Delete a selected Google Presentation",
+        "title_options": null,
+        "options": null
+      },
+      "es": {
+        "title": "Eliminar Presentación",
+        "description": "Elimina una Presentación de Google seleccionada",
+        "title_options": null,
+        "options": null
+      },
+      "pr": {
+        "title": "Excluir Apresentação",
+        "description": "Excluir uma Apresentação Google selecionada",
+        "title_options": null,
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "14olZxHX8sQUzUg33h72b-uK32jxC1u3uwsKlw0gEgM0",
+              "en": "14olZxHX8sQUzUg33h72b-uK32jxC1u3uwsKlw0gEgM0",
+              "pr": "14olZxHX8sQUzUg33h72b-uK32jxC1u3uwsKlw0gEgM0"
+            },
+            "title": {
+              "es": "ID de la Presentación",
+              "en": "Presentation ID",
+              "pr": "ID da Apresentação"
+            },
+            "id": "p_id",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": "session",
+            "title": {
+              "en": "Session",
+              "es": "Session",
+              "pr": "Session"
+            },
+            "help": {
+              "es": "Identificador de sesión (Opcional)",
+              "en": "Session ID (Optional)",
+              "pr": "ID da sessão (Opcional)"
+            },
+            "id": "session",
+            "css": "col-md-6"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
+            "title": {
+              "es": "Variable donde se guardará el resultado:",
+              "en": "Variable where the result will be saved:",
+              "pr": "Variável onde o resultado será salvo:"
+            },
+            "id": "result_var",
+            "css": "col-md-10"
+          }
+        ]
+      },
+      "video_youtube": "aMV6cXPMMSo",
+      "icon": "data:image/png;base64,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",
+      "module": "deletePresentation",
+      "module_name": "GoogleSlides",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": true
+    },
+    {
+      "en": {
+        "title": "Delete Slide",
+        "description": "Delete a slide from a selected Google Presentation",
+        "title_options": null,
+        "options": null
+      },
+      "es": {
+        "title": "Eliminar Diapositiva",
+        "description": "Elimina una diapositiva de una Presentación de Google seleccionada",
+        "title_options": null,
+        "options": null
+      },
+      "pr": {
+        "title": "Excluir Slide",
+        "description": "Excluir uma slide de uma Apresentação Google selecionada",
+        "title_options": null,
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "14olZxHX8sQUzUg33h72b-uK32jxC1u3uwsKlw0gEgM0",
+              "en": "14olZxHX8sQUzUg33h72b-uK32jxC1u3uwsKlw0gEgM0",
+              "pr": "14olZxHX8sQUzUg33h72b-uK32jxC1u3uwsKlw0gEgM0"
+            },
+            "title": {
+              "es": "ID de la Presentación",
+              "en": "Presentation ID",
+              "pr": "ID da Apresentação"
+            },
+            "id": "id",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "SLIDES_API1476047835_0",
+              "en": "SLIDES_API1476047835_0",
+              "pr": "SLIDES_API1476047835_0"
+            },
+            "title": {
+              "es": "ID de la diapositiva",
+              "en": "Slide ID",
+              "pr": "Slide ID"
+            },
+            "id": "slide",
+            "css": "col-md-10"
+          },
+          {
+            "type": "input",
+            "placeholder": "session",
+            "title": {
+              "en": "Session",
+              "es": "Session",
+              "pr": "Session"
+            },
+            "help": {
+              "es": "Identificador de sesión (Opcional)",
+              "en": "Session ID (Optional)",
+              "pr": "ID da sessão (Opcional)"
+            },
+            "id": "session",
+            "css": "col-md-6"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
+            "title": {
+              "es": "Variable donde se guardará el resultado:",
+              "en": "Variable where the result will be saved:",
+              "pr": "Variável onde o resultado será salvo:"
+            },
+            "id": "result_var",
+            "css": "col-md-10"
+          }
+        ]
+      },
+      "video_youtube": "aMV6cXPMMSo",
+      "icon": "data:image/png;base64,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",
+      "module": "deleteSlide",
+      "module_name": "GoogleSlides",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": true
+    },
+    {
+      "en": {
+        "title": "Add Text",
+        "description": "Insert a new Text in Google Slides presentation with Rocketbot. This command is used for blank slides.",
+        "title_options": null,
+        "options": null
+      },
+      "es": {
+        "title": "Agregar Texto",
+        "description": "Inserta un nuevo texto en una presentación de Google Slides con Rocketbot. Este comando se utiliza para diapositivas en blanco.",
+        "title_options": null,
+        "options": null
+      },
+      "pr": {
+        "title": "Adicionar Texto",
+        "description": "Insira um novo texto na Apresentação Google com Rocketbot. Este comando é usado para slides em branco.",
+        "title_options": null,
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
+              "en": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
+              "pr": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE"
+            },
+            "title": {
+              "es": "ID de la Presentación",
+              "en": "Presentation ID",
+              "pr": "ID da Apresentação"
+            },
+            "id": "presentation",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
+              "en": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
+              "pr": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE"
+            },
+            "title": {
+              "es": "ID de la diapositiva",
+              "en": "Slide ID",
+              "pr": "ID do slide"
+            },
+            "id": "page",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Texto a insertar",
+              "en": "Text to insert",
+              "pr": "Texto para inserir"
+            },
+            "title": {
+              "es": "Texto",
+              "en": "Text",
+              "pr": "Texto"
+            },
+            "id": "text",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "12",
+              "en": "12",
+              "pr": "12"
+            },
+            "description": {
+              "es": "Tamaño de fuente que tendrá el texto escrito.",
+              "en": "Font size that the written text will have.",
+              "pr": "Tamanho da fonte que o texto escrito terá."
+            },
+            "help": {
+              "es": "Por default el tamaño es 12",
+              "en": "By default the size is 12",
+              "pr": "Por padrão o tamanho é 12"
+            },
+            "title": {
+              "es": "Tamaño de fuente",
+              "en": "Font size",
+              "pr": "Tamanho da fonte"
+            },
+            "id": "size",
+            "css": "col-md-4"
+          },
+          {
+            "type": "select",
+            "placeholder": {
+              "es": "Left",
+              "en": "Left",
+              "pr": "Left"
+            },
+            "description": {
+              "es": "Alineación que tendrá el texto escrito.",
+              "en": "Align that the written text will have.",
+              "pr": "Alinhamento que o texto escrito terá."
+            },
+            "title": {
+              "es": "Alineación",
+              "en": "Align",
+              "pr": "Alinhamento"
+            },
+            "options": [
+              {
+                "title": "Left",
+                "value": "START"
+              },
+              {
+                "title": "Center",
+                "value": "CENTER"
+              },
+              {
+                "title": "Right",
+                "value": "END"
+              },
+              {
+                "title": "Justify",
+                "value": "JUSTIFIED"
+              }
+            ],
+            "id": "alignment_text",
+            "css": "col-md-6"
+          },
+          {
+            "type": "select",
+            "placeholder": {
+              "es": "Black",
+              "en": "Black",
+              "pr": "Black"
+            },
+            "description": {
+              "es": "Color que tendrá el texto escrito",
+              "en": "Color that the written text will have",
+              "pr": "Cor que o texto escrito terá"
+            },
+            "title": {
+              "es": "Color de texto",
+              "en": "Text color",
+              "pr": "Cor do texto"
+            },
+            "help": {
+              "es": "Por default el color es negro",
+              "en": "By default the color is black",
+              "pr": "Por padrão a cor é preto"
+            },
+            "options": [
+              {
+                "title": "Black",
+                "value": "black"
+              },
+              {
+                "title": "Blue",
+                "value": "blue"
+              },
+              {
+                "title": "Ligth Blue",
+                "value": "ligthBlue"
+              },
+              {
+                "title": "Dark Red",
+                "value": "darkRed"
+              },
+              {
+                "title": "Dark Yellow",
+                "value": "darkYellow"
+              },
+              {
+                "title": "Gray 25%",
+                "value": "gray25"
+              },
+              {
+                "title": "Gray 50%",
+                "value": "gray50"
+              },
+              {
+                "title": "Green",
+                "value": "green"
+              },
+              {
+                "title": "Pink",
+                "value": "pink"
+              },
+              {
+                "title": "Red",
+                "value": "red"
+              },
+              {
+                "title": "Teal",
+                "value": "teal"
+              },
+              {
+                "title": "White",
+                "value": "white"
+              },
+              {
+                "title": "Yellow",
+                "value": "yellow"
+              }
+            ],
+            "id": "color",
+            "css": "col-md-6"
+          },
+          {
+            "type": "checkbox",
+            "placeholder": {
+              "es": "True",
+              "en": "True",
+              "pr": "True"
+            },
+            "description": {
+              "es": "Seleccionar si el texto irá en negrita.",
+              "en": "Select whether the text will be bold.",
+              "pr": "Selecione se o texto ficará em negrito."
+            },
+            "title": {
+              "es": "Negrita",
+              "en": "Bold",
+              "pr": "Negrito"
+            },
+            "id": "bold",
+            "css": "col-md-4"
+          },
+          {
+            "type": "checkbox",
+            "placeholder": {
+              "es": "True",
+              "en": "True",
+              "pr": "True"
+            },
+            "description": {
+              "es": "Seleccionar si el texto irá en cursiva.",
+              "en": "Select whether the text will be italic.",
+              "pr": "Selecione se o texto ficará em itálico."
+            },
+            "title": {
+              "es": "Cursiva",
+              "en": "Italic",
+              "pr": "Itálico"
+            },
+            "id": "italic",
+            "css": "col-md-4"
+          },
+          {
+            "type": "checkbox",
+            "placeholder": {
+              "es": "False",
+              "en": "False",
+              "pr": "False"
+            },
+            "description": {
+              "es": "Seleccionar si el texto irá subrayado.",
+              "en": "Select whether the text will be underlined.",
+              "pr": "Selecione se o texto será sublinhado."
+            },
+            "title": {
+              "es": "Subrayar",
+              "en": "Underline",
+              "pr": "Sublinhar"
+            },
+            "id": "underline",
+            "css": "col-md-4"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
+            "title": {
+              "es": "Variable donde se guardará el ID:",
+              "en": "Variable where the ID will be saved:",
+              "pr": "Variável onde o ID será salvo:"
+            },
+            "id": "result_var",
+            "css": "col-md-10"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "MiTexto1",
+              "en": "MyText1",
+              "pr": "MeuTexto1"
+            },
+            "title": {
+              "es": "Identificador de Texto",
+              "en": "Text Identifier",
+              "pr": "Identificador de texto"
+            },
+            "id": "element_id",
+            "css": "col-md-10"
+          },
+          {
+            "type": "input",
+            "placeholder": "session",
+            "title": {
+              "en": "Session",
+              "es": "Session",
+              "pr": "Session"
+            },
+            "help": {
+              "es": "Identificador de sesión (Opcional)",
+              "en": "Session ID (Optional)",
+              "pr": "ID da sessão (Opcional)"
+            },
+            "id": "session",
+            "css": "col-md-6"
+          }
+        ]
+      },
+      "video_youtube": "aMV6cXPMMSo",
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAqFSURBVHgB7d09clNXGMfhV8ZJkxTsIM4KwhKgACZdWAFpUxFWAKwgUKVlB9AxgcxAVgCpPZnADmiSKvjmSgiwjT/0rXvv/3lmNLY0LiWd333PkVwFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACsy6hgSc2julhf1Q91UJdqp75pH7rUPrMuVtPeYBl/1d3RT3WvgJUTACxksuh/XbfaRf5ye/dywTrst7cdEQDrIACYy8eFv+pnV/is3f70pwiAlRMAzKx5VnfKws8m7R/6XQTASgkAztU8qb26UI9qvLcPm7R/7L4IgJXZKThD83vdrN16WRZ/uuCg7ja/TiZRwJIEAKeajPwP6qGRP50iAmAlBAAnmiz+Td0t6CIRAEsTAHxmMva3+NN1IgCW4hAgR0wO/I33/I396YL9Gf7GwUBYiAkAR12o5xZ/esUkABYiAPho+jn/vYK+EQEwN1sATEw/6/93QZfMsgVwmO0AmJkJAO/tOPTHAJgEwMxMAHD1T3fNOwH4wCQAzmUCwPjg3+WCITEJgHMJAMZuFQyNCIAzCYBwk/G/7/lnqEQAnEoApDP+Z+hEAJxIAODqn+ETAfAZAcB3BQlEABwhANgrSCEC4CMBwF5BEhEAEwIAyCMCQAAAoUQA4QQAkEsEEEwAANlEAKEEAIAIIJAAABgTAYQRAAAfiACCCACAw0QAIQQAwHEigAACAOAkIoCBEwAApxEBDJgAADiLCGCgBADAeUQAAyQAAGYhAhgYAQAwKxHAgAgAgHmIAAZCAADMSwQwAAIAYBEigJ4TAACLEgH0mAAAWIYIoKcEAMCyRAA9JAAAVkEE0DMCAGBVRAA9IgAAVkkE0BMCAGDVRAA9IAAA1kEE0HECAGBdRAAdJgAA1kkE0FECAGDdRAAdJAAANkEE0DECAGBTRAAdIgAANkkE0BECAGDTRAAdIAAAtkEEsGUCAGBbRABbJAAAtkkEsCUCAGDbRABbIAAAukAEsGECAKArRAAbJAAAukQEsCECAKBrRAAbIAAAukgEsGYCAKCrRABrJAAAukwEsCYCAKDrRABrIAAA+kAEsGICAKAvRAArJAAA+kQEsCICAKBvRAArIAAA+kgEsCQBANBXIoAlCACAPhMBLEgAAPSdCGABAgBgCEQAcxIAAEMhApiDAAAYEhHAjAQAwNCIAGYgAACGSARwDgEAMFQigDMIAIAhEwGcQgAADJ0I4AQCACCBCOAYAQCQQgRwiAAASCICmBIAAGlEAK1REa15Wk0BkUbXrAHJTAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAALtFvTZ1aZga56NCvrKBAAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACDQbgGfPBsVA3a1KeA9EwAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAuwV8crUpgAQmAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIF2C/rs2agAmJ8JAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEQLpRvS0A4giAdI0AgFCvi2gCIF1TrwpI9LqIJgDSjepNAXkO6s8imgDABAASjeplEU0ApPuiHheQ56D+KKIJgHCjK5NDgC8KSPJq9L0zAOkEAOODgK4EIElT94t4AoCqL9s3A98HADmM/ykBQE23AQ7qQQEJHhr/MyYAeM8UADK8q3sFJQCYMgWAAE3dc/XPB6OCQ5qnk88GXypgWJp6Pbpe3xZMmQBw1Lu6YSsABmc84btScIgA4IjJePC/ul3AkNw2+uc4AcBn2jeKh+O9wgL6b7zvf619TcMxzgBwqua3uts+Q+4U0E/jxf96+zqGEwgAztQ8qR9rt35p30guFtAX43M8t135cxYBwLnaCNhrN4uet8+WvQK6ralXdVA37PlzHgHAzGwJQKe9bRf/B0b+zEoAMJfpNGAcAjcL6ILJwl//1v3RDR/hZXYCgIVMQuBCXW5/vVW+OAi24cXkP3la+FmQAGBpH2PgoA2BnfqufWhvegOW93Z6G+/tv2lfY6/qn3ps0QcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOiu/wHDrtpy/wGZewAAAABJRU5ErkJggg==",
+      "module": "addText",
+      "module_name": "GoogleSlides",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": true
+    },
+    {
+      "en": {
+        "title": "Insert Text",
+        "description": "Insert text into an element already created on a specific slide of Google Slides.",
+        "title_options": null,
+        "options": null
+      },
+      "es": {
+        "title": "Insertar Texto",
+        "description": "Inserta texto en un elemento ya creado en una diapositiva específica de Google Slides.",
+        "title_options": null,
+        "options": null
+      },
+      "pr": {
+        "title": "Inserir Texto",
+        "description": "Insira texto em um elemento já criado em um slide específico do Apresentações Google.",
+        "title_options": null,
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
+              "en": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
+              "pr": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE"
+            },
+            "title": {
+              "es": "ID de la Presentación",
+              "en": "Presentation ID",
+              "pr": "ID da Apresentação"
+            },
+            "id": "presentation",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
+              "en": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
+              "pr": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE"
+            },
+            "title": {
+              "es": "ID de la diapositiva",
+              "en": "Slide ID",
+              "pr": "ID do slide"
+            },
+            "id": "page",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Texto a insertar",
+              "en": "Text to insert",
+              "pr": "Texto para inserir"
+            },
+            "title": {
+              "es": "Texto",
+              "en": "Text",
+              "pr": "Texto"
+            },
+            "id": "text",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "12",
+              "en": "12",
+              "pr": "12"
+            },
+            "description": {
+              "es": "Tamaño de fuente que tendrá el texto escrito.",
+              "en": "Font size that the written text will have.",
+              "pr": "Tamanho da fonte que o texto escrito terá."
+            },
+            "help": {
+              "es": "Por default el tamaño es 12",
+              "en": "By default the size is 12",
+              "pr": "Por padrão o tamanho é 12"
+            },
+            "title": {
+              "es": "Tamaño de fuente",
+              "en": "Font size",
+              "pr": "Tamanho da fonte"
+            },
+            "id": "size",
+            "css": "col-md-4"
+          },
+          {
+            "type": "select",
+            "placeholder": {
+              "es": "Left",
+              "en": "Left",
+              "pr": "Left"
+            },
+            "description": {
+              "es": "Alineación que tendrá el texto escrito.",
+              "en": "Align that the written text will have.",
+              "pr": "Alinhamento que o texto escrito terá."
+            },
+            "title": {
+              "es": "Alineación",
+              "en": "Align",
+              "pr": "Alinhamento"
+            },
+            "options": [
+              {
+                "title": "Left",
+                "value": "START"
+              },
+              {
+                "title": "Center",
+                "value": "CENTER"
+              },
+              {
+                "title": "Right",
+                "value": "END"
+              },
+              {
+                "title": "Justify",
+                "value": "JUSTIFIED"
+              }
+            ],
+            "id": "alignment_text",
+            "css": "col-md-6"
+          },
+          {
+            "type": "select",
+            "placeholder": {
+              "es": "Black",
+              "en": "Black",
+              "pr": "Black"
+            },
+            "description": {
+              "es": "Color que tendrá el texto escrito",
+              "en": "Color that the written text will have",
+              "pr": "Cor que o texto escrito terá"
+            },
+            "title": {
+              "es": "Color de texto",
+              "en": "Text color",
+              "pr": "Cor do texto"
+            },
+            "help": {
+              "es": "Por default el color es negro",
+              "en": "By default the color is black",
+              "pr": "Por padrão a cor é preto"
+            },
+            "options": [
+              {
+                "title": "Black",
+                "value": "black"
+              },
+              {
+                "title": "Blue",
+                "value": "blue"
+              },
+              {
+                "title": "Ligth Blue",
+                "value": "ligthBlue"
+              },
+              {
+                "title": "Dark Red",
+                "value": "darkRed"
+              },
+              {
+                "title": "Dark Yellow",
+                "value": "darkYellow"
+              },
+              {
+                "title": "Gray 25%",
+                "value": "gray25"
+              },
+              {
+                "title": "Gray 50%",
+                "value": "gray50"
+              },
+              {
+                "title": "Green",
+                "value": "green"
+              },
+              {
+                "title": "Pink",
+                "value": "pink"
+              },
+              {
+                "title": "Red",
+                "value": "red"
+              },
+              {
+                "title": "Teal",
+                "value": "teal"
+              },
+              {
+                "title": "White",
+                "value": "white"
+              },
+              {
+                "title": "Yellow",
+                "value": "yellow"
+              }
+            ],
+            "id": "color",
+            "css": "col-md-6"
+          },
+          {
+            "type": "checkbox",
+            "placeholder": {
+              "es": "True",
+              "en": "True",
+              "pr": "True"
+            },
+            "description": {
+              "es": "Seleccionar si el texto irá en negrita.",
+              "en": "Select whether the text will be bold.",
+              "pr": "Selecione se o texto ficará em negrito."
+            },
+            "title": {
+              "es": "Negrita",
+              "en": "Bold",
+              "pr": "Negrito"
+            },
+            "id": "bold",
+            "css": "col-md-4"
+          },
+          {
+            "type": "checkbox",
+            "placeholder": {
+              "es": "True",
+              "en": "True",
+              "pr": "True"
+            },
+            "description": {
+              "es": "Seleccionar si el texto irá en cursiva.",
+              "en": "Select whether the text will be italic.",
+              "pr": "Selecione se o texto ficará em itálico."
+            },
+            "title": {
+              "es": "Cursiva",
+              "en": "Italic",
+              "pr": "Itálico"
+            },
+            "id": "italic",
+            "css": "col-md-4"
+          },
+          {
+            "type": "checkbox",
+            "placeholder": {
+              "es": "False",
+              "en": "False",
+              "pr": "False"
+            },
+            "description": {
+              "es": "Seleccionar si el texto irá subrayado.",
+              "en": "Select whether the text will be underlined.",
+              "pr": "Selecione se o texto será sublinhado."
+            },
+            "title": {
+              "es": "Subrayar",
+              "en": "Underline",
+              "pr": "Sublinhar"
+            },
+            "id": "underline",
+            "css": "col-md-4"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
+            "title": {
+              "es": "Variable donde se guardará el ID:",
+              "en": "Variable where the ID will be saved:",
+              "pr": "Variável onde o ID será salvo:"
+            },
+            "id": "result_var",
+            "css": "col-md-10"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "MiCajaDeTexto",
+              "en": "MyBoxText",
+              "pr": "MinhaCaixadeTexto"
+            },
+            "title": {
+              "es": "ID del Elemento al que se le insertará el Texto",
+              "en": "ID of the Element to which the Text will be inserted",
+              "pr": "ID do Elemento ao qual o Texto será inserido"
+            },
+            "id": "element_id",
+            "css": "col-md-10"
+          },
+          {
+            "type": "input",
+            "placeholder": "session",
+            "title": {
+              "en": "Session",
+              "es": "Session",
+              "pr": "Session"
+            },
+            "help": {
+              "es": "Identificador de sesión (Opcional)",
+              "en": "Session ID (Optional)",
+              "pr": "ID da sessão (Opcional)"
+            },
+            "id": "session",
+            "css": "col-md-6"
+          }
+        ]
+      },
+      "video_youtube": "aMV6cXPMMSo",
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAqFSURBVHgB7d09clNXGMfhV8ZJkxTsIM4KwhKgACZdWAFpUxFWAKwgUKVlB9AxgcxAVgCpPZnADmiSKvjmSgiwjT/0rXvv/3lmNLY0LiWd333PkVwFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACsy6hgSc2julhf1Q91UJdqp75pH7rUPrMuVtPeYBl/1d3RT3WvgJUTACxksuh/XbfaRf5ye/dywTrst7cdEQDrIACYy8eFv+pnV/is3f70pwiAlRMAzKx5VnfKws8m7R/6XQTASgkAztU8qb26UI9qvLcPm7R/7L4IgJXZKThD83vdrN16WRZ/uuCg7ja/TiZRwJIEAKeajPwP6qGRP50iAmAlBAAnmiz+Td0t6CIRAEsTAHxmMva3+NN1IgCW4hAgR0wO/I33/I396YL9Gf7GwUBYiAkAR12o5xZ/esUkABYiAPho+jn/vYK+EQEwN1sATEw/6/93QZfMsgVwmO0AmJkJAO/tOPTHAJgEwMxMAHD1T3fNOwH4wCQAzmUCwPjg3+WCITEJgHMJAMZuFQyNCIAzCYBwk/G/7/lnqEQAnEoApDP+Z+hEAJxIAODqn+ETAfAZAcB3BQlEABwhANgrSCEC4CMBwF5BEhEAEwIAyCMCQAAAoUQA4QQAkEsEEEwAANlEAKEEAIAIIJAAABgTAYQRAAAfiACCCACAw0QAIQQAwHEigAACAOAkIoCBEwAApxEBDJgAADiLCGCgBADAeUQAAyQAAGYhAhgYAQAwKxHAgAgAgHmIAAZCAADMSwQwAAIAYBEigJ4TAACLEgH0mAAAWIYIoKcEAMCyRAA9JAAAVkEE0DMCAGBVRAA9IgAAVkkE0BMCAGDVRAA9IAAA1kEE0HECAGBdRAAdJgAA1kkE0FECAGDdRAAdJAAANkEE0DECAGBTRAAdIgAANkkE0BECAGDTRAAdIAAAtkEEsGUCAGBbRABbJAAAtkkEsCUCAGDbRABbIAAAukAEsGECAKArRAAbJAAAukQEsCECAKBrRAAbIAAAukgEsGYCAKCrRABrJAAAukwEsCYCAKDrRABrIAAA+kAEsGICAKAvRAArJAAA+kQEsCICAKBvRAArIAAA+kgEsCQBANBXIoAlCACAPhMBLEgAAPSdCGABAgBgCEQAcxIAAEMhApiDAAAYEhHAjAQAwNCIAGYgAACGSARwDgEAMFQigDMIAIAhEwGcQgAADJ0I4AQCACCBCOAYAQCQQgRwiAAASCICmBIAAGlEAK1REa15Wk0BkUbXrAHJTAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAALtFvTZ1aZga56NCvrKBAAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACDQbgGfPBsVA3a1KeA9EwAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAuwV8crUpgAQmAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIF2C/rs2agAmJ8JAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEQLpRvS0A4giAdI0AgFCvi2gCIF1TrwpI9LqIJgDSjepNAXkO6s8imgDABAASjeplEU0ApPuiHheQ56D+KKIJgHCjK5NDgC8KSPJq9L0zAOkEAOODgK4EIElT94t4AoCqL9s3A98HADmM/ykBQE23AQ7qQQEJHhr/MyYAeM8UADK8q3sFJQCYMgWAAE3dc/XPB6OCQ5qnk88GXypgWJp6Pbpe3xZMmQBw1Lu6YSsABmc84btScIgA4IjJePC/ul3AkNw2+uc4AcBn2jeKh+O9wgL6b7zvf619TcMxzgBwqua3uts+Q+4U0E/jxf96+zqGEwgAztQ8qR9rt35p30guFtAX43M8t135cxYBwLnaCNhrN4uet8+WvQK6ralXdVA37PlzHgHAzGwJQKe9bRf/B0b+zEoAMJfpNGAcAjcL6ILJwl//1v3RDR/hZXYCgIVMQuBCXW5/vVW+OAi24cXkP3la+FmQAGBpH2PgoA2BnfqufWhvegOW93Z6G+/tv2lfY6/qn3ps0QcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOiu/wHDrtpy/wGZewAAAABJRU5ErkJggg==",
+      "module": "insertText",
+      "module_name": "GoogleSlides",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": true
+    },
+    {
+      "en": {
+        "title": "Delete Text",
+        "description": "Remove text from an element in a Google Slides presentation with Rocketbot",
+        "title_options": null,
+        "options": null
+      },
+      "es": {
+        "title": "Eliminar Texto",
+        "description": "Elimina el texto de un elemento en una presentación de Google Slides con Rocketbot",
+        "title_options": null,
+        "options": null
+      },
+      "pr": {
+        "title": "Excluir texto",
+        "description": "Remova o texto de um elemento em uma apresentação do Apresentações Google com Rocketbot",
+        "title_options": null,
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
+              "en": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
+              "pr": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE"
+            },
+            "title": {
+              "es": "ID de la Presentación",
+              "en": "Presentation ID",
+              "pr": "ID da Apresentação"
+            },
+            "id": "p_id",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
+              "en": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
+              "pr": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE"
+            },
+            "title": {
+              "es": "ID de la diapositiva",
+              "en": "Slide ID",
+              "pr": "ID do slide"
+            },
+            "id": "s_id",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "MiTexto1",
+              "en": "MyText1",
+              "pr": "MeuTexto1"
+            },
+            "title": {
+              "es": "ID del Elemento que contiene el Texto",
+              "en": "Element ID of the TextBox",
+              "pr": "ID do Elemento que contém o texto"
+            },
+            "id": "object_id",
+            "css": "col-md-10"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
+            "title": {
+              "es": "Variable donde se guardará el ID:",
+              "en": "Variable where the ID will be saved:",
+              "pr": "Variável onde o ID será salvo:"
+            },
+            "id": "result_var",
+            "css": "col-md-10"
+          },
+          {
+            "type": "input",
+            "placeholder": "session",
+            "title": {
+              "en": "Session",
+              "es": "Session",
+              "pr": "Session"
+            },
+            "help": {
+              "es": "Identificador de sesión (Opcional)",
+              "en": "Session ID (Optional)",
+              "pr": "ID da sessão (Opcional)"
+            },
+            "id": "session",
+            "css": "col-md-6"
+          }
+        ]
+      },
+      "video_youtube": "aMV6cXPMMSo",
+      "icon": "data:image/png;base64,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",
+      "module": "deleteText",
+      "module_name": "GoogleSlides",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": true
+    },
+    {
+      "en": {
+        "title": "Download Slides",
+        "description": "Download a Google Slides presentation in PP or PDF format with Rocketbot",
+        "title_options": null,
+        "options": null
+      },
+      "es": {
+        "title": "Descargar Presentación",
+        "description": "Decarga una presentación Google Slides en formato PP o PDF con Rocketbot",
+        "title_options": null,
+        "options": null
+      },
+      "pr": {
+        "title": "Baixar Apresentação",
+        "description": "Baixe uma apresentação do Apresentações Google em formato PP ou PDF com Rocketbot",
+        "title_options": null,
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
+              "en": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
+              "pr": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE"
+            },
+            "title": {
+              "es": "ID de la Presentación",
+              "en": "Presentation ID",
+              "pr": "ID da Apresentação"
+            },
+            "id": "p_id",
+            "css": "col-md-12"
+          },
+          {
+            "type": "select",
+            "placeholder": {
+              "es": "---- Select format ----",
+              "en": "---- Select format ----",
+              "pr": "---- Select format ----"
+            },
+            "title": {
+              "es": "Formato del archivo (Slides)",
+              "en": "File format (Slides)",
+              "pr": "Formato de arquivo (Slides)"
+            },
+            "options": [
+              {
+                "title": "---- Select format ----",
+                "value": ""
+              },
+              {
+                "title": "PDF (.pdf)",
+                "value": "PDF (.pdf)"
+              },
+              {
+                "title": "Microsoft PowerPoint (.pptx)",
+                "value": "Microsoft PowerPoint (.pptx)"
+              }
+            ],
+            "id": "format",
+            "css": "col-md-12"
+          },
+          {
+            "type": "folder_select",
+            "placeholder": {
+              "es": "C:\\users\\usuario\\Downloads",
+              "en": "C:\\users\\usuario\\Downloads",
+              "pr": "C:\\users\\usuario\\Downloads"
+            },
+            "title": {
+              "es": "Ruta donde guardar archivo",
+              "en": "Path where to save file",
+              "pr": "Caminho onde salvar o arquivo"
+            },
+            "id": "path_file",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
+            "title": {
+              "es": "Variable donde se guardará el resultado:",
+              "en": "Variable where the result will be saved:",
+              "pr": "Variável onde o resultado será salvo:"
+            },
+            "id": "result_var",
+            "css": "col-md-10"
+          },
+          {
+            "type": "input",
+            "placeholder": "session",
+            "title": {
+              "en": "Session",
+              "es": "Session",
+              "pr": "Session"
+            },
+            "help": {
+              "es": "Identificador de sesión (Opcional)",
+              "en": "Session ID (Optional)",
+              "pr": "ID da sessão (Opcional)"
+            },
+            "id": "session",
+            "css": "col-md-6"
+          }
+        ]
+      },
+      "video_youtube": "aMV6cXPMMSo",
+      "icon": "data:image/png;base64,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",
+      "module": "downloadSlides",
+      "module_name": "GoogleSlides",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": true
+    },
+    {
+      "en": {
+        "title": "Get Info",
+        "description": "Gets the name of the presentation and the elements of the indicated slide",
+        "title_options": null,
+        "options": null
+      },
+      "es": {
+        "title": "Obtener Info",
+        "description": "Obtiene el nombre de la presentación y los elementos de la diapositiva indicada",
+        "title_options": null,
+        "options": null
+      },
+      "pr": {
+        "title": "Obter Info",
+        "description": "Obtém o nome da apresentação e os elementos do slide indicado",
+        "title_options": null,
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "14olZxHX8sQUzUg33h72b-uK32jxC1u3uwsKlw0gEgM0",
+              "en": "14olZxHX8sQUzUg33h72b-uK32jxC1u3uwsKlw0gEgM0",
+              "pr": "14olZxHX8sQUzUg33h72b-uK32jxC1u3uwsKlw0gEgM0"
+            },
+            "title": {
+              "es": "ID de la Presentación",
+              "en": "Presentation ID",
+              "pr": "ID da Apresentação"
+            },
+            "id": "p_id",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "0",
+              "en": "0",
+              "pr": "0"
+            },
+            "title": {
+              "es": "Indice de la diapositiva a obtener",
+              "en": "Index of the slide to obtain",
+              "pr": "Índice do slide para obter"
+            },
+            "help": {
+              "es": "El índice debe ser un entero, tener en cuenta que la primer diapositiva es 0",
+              "en": "The index must be an integer, note that the first slide is 0",
+              "pr": "O índice deve ser um número inteiro, observe que o primeiro slide é 0"
+            },
+            "id": "slide",
+            "css": "col-md-6"
+          },
+          {
+            "type": "input",
+            "placeholder": "session",
+            "title": {
+              "en": "Session",
+              "es": "Session",
+              "pr": "Session"
+            },
+            "help": {
+              "es": "Identificador de sesión (Opcional)",
+              "en": "Session ID (Optional)",
+              "pr": "ID da sessão (Opcional)"
+            },
+            "id": "session",
+            "css": "col-md-6"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
+            "title": {
+              "es": "Variable donde se guardará el resultado:",
+              "en": "Variable where the result will be saved:",
+              "pr": "Variável onde o resultado será salvo:"
+            },
+            "id": "result_var",
+            "css": "col-md-10"
+          }
+        ]
+      },
+      "video_youtube": "aMV6cXPMMSo",
+      "icon": "data:image/png;base64,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",
+      "module": "getInfo",
+      "module_name": "GoogleSlides",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": true
+    }
+  ]
+}
