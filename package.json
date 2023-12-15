@@ -608,9 +608,9 @@
               "pr": "Tamanho da fonte que o texto escrito terá."
             },
             "help": {
-              "es": "Por default el tamaño es 12",
-              "en": "By default the size is 12",
-              "pr": "Por padrão o tamanho é 12"
+              "es": "Por default el tamaño es 14",
+              "en": "By default the size is 14",
+              "pr": "Por padrão o tamanho é 14"
             },
             "title": {
               "es": "Tamaño de fuente",

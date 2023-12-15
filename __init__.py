@@ -41,13 +41,10 @@ elif sys.maxsize <= 2**32 and cur_path_x86 not in sys.path:
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
-from google.oauth2.credentials import Credentials
 from googleapiclient.http import MediaIoBaseDownload
 
 import traceback
 import pickle
-import re
-
 
 """
     Obtengo el modulo que fue invocado
@@ -121,15 +118,12 @@ try:
         try:            
             service_slides = build('slides', 'v1', credentials=mod_sls_session[session])
 
-
             presentation_body = {
                 "title": title
             }
 
             request = service_slides.presentations().create(body=presentation_body)
             response = request.execute()
-            
-            # Obtener el ID de la presentación
             
             SetVar(result, response["presentationId"])  #type: ignore
 
@@ -430,6 +424,8 @@ try:
                 SetVar(result, True) #type: ignore
 
         except Exception as e:
+            import traceback
+            traceback.print_exc()
             PrintException()    #type: ignore
             SetVar(result, False)   #type: ignore
             raise e
@@ -442,10 +438,8 @@ try:
         try:
             service_drive = build('drive', 'v3', credentials=mod_sls_session[session])
 
-                # Obtén el archivo asociado a la presentación
             file_metadata = service_drive.files().get(fileId=presentation_id).execute()
 
-            # Elimina el archivo (la presentación)
             service_drive.files().delete(fileId=presentation_id).execute()
             
             
@@ -453,6 +447,8 @@ try:
                 SetVar(result, True) #type: ignore
 
         except Exception as e:
+            import traceback
+            traceback.print_exc()
             PrintException()    #type: ignore
             SetVar(result, False)   #type: ignore
             raise e
@@ -480,6 +476,8 @@ try:
                 SetVar(result, True)
 
         except Exception as e:
+            import traceback
+            traceback.print_exc()
             PrintException()
             SetVar(result, False)
             raise e
@@ -502,7 +500,7 @@ try:
                 page = slides[nro_page]
 
             res.append({"Nombre":f"{response['title']}"})
-            # Iterar sobre los objetos en la diapositiva para encontrar los IDs de los shapes
+
             for page_element in page.get('pageElements', []):
                 object_id = page_element.get('objectId')
                 shape_type = page_element.get('shape').get('shapeType') if 'shape' in page_element else None
@@ -512,6 +510,8 @@ try:
             SetVar(result, res)
 
         except Exception as e:
+            import traceback
+            traceback.print_exc()
             PrintException()
             SetVar(result, False)
             raise e
@@ -562,13 +562,14 @@ try:
                 SetVar(result, True)
 
         except Exception as e:
+            import traceback
+            traceback.print_exc()
             PrintException()    #type: ignore
             SetVar(result, False)   #type: ignore
             raise e
 
 except Exception as e:
+    import traceback
+    traceback.print_exc()
     PrintException()
     raise e
-
-
-
