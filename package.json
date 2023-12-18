@@ -259,6 +259,22 @@
             },
             "id": "result",
             "css": "col-md-10"
+          },
+          {
+            "type": "input",
+            "placeholder": "session",
+            "title": {
+              "en": "Session",
+              "es": "Session",
+              "pr": "Session"
+            },
+            "help": {
+              "es": "Identificador de sesión (Opcional)",
+              "en": "Session ID (Optional)",
+              "pr": "ID da sessão (Opcional)"
+            },
+            "id": "session",
+            "css": "col-md-6"
           }
         ]
       },
@@ -331,6 +347,22 @@
             },
             "id": "result_var",
             "css": "col-md-10"
+          },
+          {
+            "type": "input",
+            "placeholder": "session",
+            "title": {
+              "en": "Session",
+              "es": "Session",
+              "pr": "Session"
+            },
+            "help": {
+              "es": "Identificador de sesión (Opcional)",
+              "en": "Session ID (Optional)",
+              "pr": "ID da sessão (Opcional)"
+            },
+            "id": "session",
+            "css": "col-md-6"
           }
         ]
       },
