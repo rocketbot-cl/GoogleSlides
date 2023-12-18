@@ -293,12 +293,12 @@ try:
                 .execute()
             )
 
-            SetVar(result, identificador) #type: ignore
+            SetVar(result, identificador)
 
         except Exception as e:
             import traceback
             traceback.print_exc()
-            PrintException()    #type: ignore
+            PrintException()
             SetVar(result, False)
             raise e
         
@@ -387,13 +387,13 @@ try:
                 .execute()
             )
 
-            SetVar(result, identificador) #type: ignore
-
+            SetVar(result, identificador)
+            
         except Exception as e:
             import traceback
             traceback.print_exc()
-            PrintException()    #type: ignore
-            SetVar(result, False)   #type: ignore
+            PrintException()
+            SetVar(result, False)
             raise e
         
     if module == "deleteText":

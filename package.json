@@ -97,6 +97,7 @@
               "en": "Variable name without {}",
               "pr": "Nome da variável sem {}"
             },
+            "remove_vars" : true,
             "id": "result",
             "css": "col-md-8"
           }
@@ -169,6 +170,7 @@
               "en": "Variable name without {}",
               "pr": "Nome da variável sem {}"
             },
+            "remove_vars" : true,
             "id": "result_var",
             "css": "col-md-10"
           },
@@ -257,6 +259,7 @@
               "en": "Variable name without {}",
               "pr": "Nome da variável sem {}"
             },
+            "remove_vars" : true,
             "id": "result",
             "css": "col-md-10"
           },
@@ -345,6 +348,7 @@
               "en": "Variable name without {}",
               "pr": "Nome da variável sem {}"
             },
+            "remove_vars" : true,
             "id": "result_var",
             "css": "col-md-10"
           },
@@ -444,6 +448,7 @@
               "en": "Variable where the result will be saved:",
               "pr": "Variável onde o resultado será salvo:"
             },
+            "remove_vars" : true,
             "id": "result_var",
             "css": "col-md-10"
           }
@@ -542,6 +547,7 @@
               "en": "Variable where the result will be saved:",
               "pr": "Variável onde o resultado será salvo:"
             },
+            "remove_vars" : true,
             "id": "result_var",
             "css": "col-md-10"
           }
@@ -841,6 +847,7 @@
               "en": "Variable where the ID will be saved:",
               "pr": "Variável onde o ID será salvo:"
             },
+            "remove_vars" : true,
             "id": "result_var",
             "css": "col-md-10"
           },
@@ -1171,6 +1178,7 @@
               "en": "Variable where the ID will be saved:",
               "pr": "Variável onde o ID será salvo:"
             },
+            "remove_vars" : true,
             "id": "result_var",
             "css": "col-md-10"
           },
@@ -1299,6 +1307,7 @@
               "en": "Variable where the ID will be saved:",
               "pr": "Variável onde o ID será salvo:"
             },
+            "remove_vars" : true,
             "id": "result_var",
             "css": "col-md-10"
           },
@@ -1426,6 +1435,7 @@
               "en": "Variable where the result will be saved:",
               "pr": "Variável onde o resultado será salvo:"
             },
+            "remove_vars" : true,
             "id": "result_var",
             "css": "col-md-10"
           },
@@ -1545,6 +1555,7 @@
               "en": "Variable where the result will be saved:",
               "pr": "Variável onde o resultado será salvo:"
             },
+            "remove_vars" : true,
             "id": "result_var",
             "css": "col-md-10"
           }
