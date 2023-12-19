@@ -499,13 +499,10 @@ try:
             if slides:
                 page = slides[nro_page]
 
-            res.append({"Nombre":f"{response['title']}"})
-
             for page_element in page.get('pageElements', []):
                 object_id = page_element.get('objectId')
-                shape_type = page_element.get('shape').get('shapeType') if 'shape' in page_element else None
-                
-                res.append({"Tipo de Elemento":f"{shape_type}", "ID del Elemento":f"{object_id}"})                
+              
+                res.append(object_id)                
 
             SetVar(result, res)
 
