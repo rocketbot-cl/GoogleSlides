@@ -6,8 +6,6 @@
   
 This module allows you to create, write and update Google Slides. You can add or remove slides and text on them; download the presentation in various formats; and more.  
 
-
-
 ## How to install this module
   
 To install the module in Rocketbot Studio, it can be done in two ways:
@@ -48,8 +46,8 @@ Remove text from an element in a Google Slides presentation with Rocketbot
 10. Download Slides  
 Download a Google Slides presentation in PP or PDF format with Rocketbot
 
-11. Get Info  
-Gets the name of the presentation and the elements of the indicated slide  
+11. Get Element ID  
+Gets a list with the ID of each element that has the indicated Slide  
 
 
 

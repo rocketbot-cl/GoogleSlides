@@ -6,8 +6,6 @@
   
 Este módulo le permite crear, escribir y actualizar presentaciones de Google. Puede agregar o eliminar diapositivas y texto en ellas; descargar la presentación en varios formatos; y más.  
 
-
-
 ## Como instalar este módulo
   
 Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
@@ -48,8 +46,8 @@ Elimina el texto de un elemento en una presentación de Google Slides con Rocket
 10. Descargar Presentación  
 Decarga una presentación Google Slides en formato PP o PDF con Rocketbot
 
-11. Obtener Info  
-Obtiene el nombre de la presentación y los elementos de la diapositiva indicada  
+11. Obtener Element ID  
+Obtiene una lista con el ID de cada elemento que tiene la diapositiva indicada  
 
 
 

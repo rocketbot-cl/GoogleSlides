@@ -6,8 +6,6 @@
   
 Este módulo permite criar, escrever e atualizar Apresentações Google. Você pode adicionar ou remover slides e texto neles; baixe a apresentação em vários formatos; e mais.  
 
-
-
 ## Como instalar este módulo
   
 Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
@@ -48,8 +46,8 @@ Remova o texto de um elemento em uma apresentação do Apresentações Google co
 10. Baixar Apresentação  
 Baixe uma apresentação do Apresentações Google em formato PP ou PDF com Rocketbot
 
-11. Obter Info  
-Obtém o nome da apresentação e os elementos do slide indicado  
+11. Obter Element ID  
+Obtém uma lista com o ID de cada elemento que possui o Side indicado  
 
 
 

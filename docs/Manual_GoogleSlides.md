@@ -6,9 +6,7 @@
   
 This module allows you to create, write and update Google Slides. You can add or remove slides and text on them; download the presentation in various formats; and more.  
 
-  
 ![banner](imgs/BannerGoogleSlides.jpg)
-
 
 ## How to install this module
   
@@ -33,7 +31,6 @@ Before using this module, you must register your app into Google Cloud Portal.
 Note: When the first connection is made, a .pickle 
 file will be created in the Rocketbot root folder, to connect to the same service with another account you must give each session a name. If credentials expire you must delete the .pickle file and create and download a new credentials (JSON) file.
 
-
 ## Description of the commands
 
 ### Setup G-Suite credentials
@@ -41,9 +38,9 @@ file will be created in the Rocketbot root folder, to connect to the same servic
 Get permissions to handle Google Slides with Rocketbot
 |Parameters|Description|example|
 | --- | --- | --- |
-|Path||C:/path/to/credentials.json|
-|Session||session|
-|Variable where the result will be saved||Variable|
+|Path|Path to JSON file|C:/path/to/credentials.json|
+|Session|Session ID (Optional)|session|
+|Variable|Variable where the result will be saved|res|
 
 ### New Presentation
   
@@ -51,108 +48,110 @@ Create a new Google Slides presentation with Rocketbot
 |Parameters|Description|example|
 | --- | --- | --- |
 |Title of presentation||Title|
-|Variable where the ID will be saved||Variable|
-|Session||session|
+|Variable|Variable where the result will be saved|res|
+|Session|Session ID (Optional)|session|
 
 ### Add blank slide
   
 Add a new slide to your Google Slides presentation
 |Parameters|Description|example|
 | --- | --- | --- |
-|ID of presentation||1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE|
-|Variable where the result will be saved||Variable|
+|ID of presentation|At the URL https//docs.google.com/presentation/d/{ID}/edit|1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE|
+|Variable|Variable where the result will be saved|res|
+|Session|Session ID (Optional)|session|
 
 ### Add layout slide
   
 Add a new slide with title and body to your Google Slides presentation
 |Parameters|Description|example|
 | --- | --- | --- |
-|ID of presentation||1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE|
-|Variable where the result will be saved||Variable|
+|ID of presentation|At the URL https//docs.google.com/presentation/d/{ID}/edit|1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE|
+|Variable|Variable where the result will be saved|res|
+|Session|Session ID (Optional)|session|
 
 ### Delete Presentation
   
 Delete a selected Google Presentation
 |Parameters|Description|example|
 | --- | --- | --- |
-|Presentation ID||14olZxHX8sQUzUg33h72b-uK32jxC1u3uwsKlw0gEgM0|
-|Session||session|
-|Variable where the result will be saved||Variable|
+|Presentation ID|At the URL https//docs.google.com/presentation/d/{ID}/edit|14olZxHX8sQUzUg33h72b-uK32jxC1u3uwsKlw0gEgM0|
+|Session|Session ID (Optional)|session|
+|Variable|Variable where the result will be saved|res|
 
 ### Delete Slide
   
 Delete a slide from a selected Google Presentation
 |Parameters|Description|example|
 | --- | --- | --- |
-|Presentation ID||14olZxHX8sQUzUg33h72b-uK32jxC1u3uwsKlw0gEgM0|
-|Slide ID||SLIDES_API1476047835_0|
-|Session||session|
-|Variable where the result will be saved||Variable|
+|Presentation ID|At the URL https//docs.google.com/presentation/d/{ID}/edit|14olZxHX8sQUzUg33h72b-uK32jxC1u3uwsKlw0gEgM0|
+|Slide ID|At the URL https//docs.google.com/presentation/d/{ID}/edit#slide=id.{SlideID}|SLIDES_API1476047835_0|
+|Session|Session ID (Optional)|session|
+|Variable|Variable where the result will be saved|res|
 
 ### Add Text
   
 Insert a new Text in Google Slides presentation with Rocketbot. This command is used for blank slides.
 |Parameters|Description|example|
 | --- | --- | --- |
-|Presentation ID||1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE|
-|Slide ID||1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE|
-|Text||Text to insert|
+|Presentation ID|At the URL https//docs.google.com/document/d/{ID}/edit|1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE|
+|Slide ID|At the URL https//docs.google.com/presentation/d/{ID}/edit#slide=id.{SlideID}|SLIDES_API735432223_0|
+|Text|Text to insert|Hello!|
 |Font size|Font size that the written text will have.|12|
 |Align|Align that the written text will have.|Left|
 |Text color|Color that the written text will have|Black|
 |Bold|Select whether the text will be bold.|True|
 |Italic|Select whether the text will be italic.|True|
 |Underline|Select whether the text will be underlined.|False|
-|Variable where the ID will be saved||Variable|
-|Text Identifier||MyText1|
-|Session||session|
+|Variable|Variable where the ID will be saved|res|
+|Text Identifier|Identifier that will function as Element ID|MyText1|
+|Session|Session ID (Optional)|session|
 
 ### Insert Text
   
 Insert text into an element already created on a specific slide of Google Slides.
 |Parameters|Description|example|
 | --- | --- | --- |
-|Presentation ID||1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE|
-|Slide ID||1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE|
-|Text||Text to insert|
+|Presentation ID|At the URL https//docs.google.com/document/d/{ID}/edit|1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE|
+|Slide ID|At the URL https//docs.google.com/presentation/d/{ID}/edit#slide=id.{SlideID}|SLIDES_API735432223_0|
+|Element ID|Use the 'Get Element Id' command to obtain the element ID to which you want to insert the text|SLIDES_API1561945157_2|
+|Text|Text to insert|Hello!|
 |Font size|Font size that the written text will have.|12|
 |Align|Align that the written text will have.|Left|
 |Text color|Color that the written text will have|Black|
 |Bold|Select whether the text will be bold.|True|
 |Italic|Select whether the text will be italic.|True|
 |Underline|Select whether the text will be underlined.|False|
-|Variable where the ID will be saved||Variable|
-|ID of the Element to which the Text will be inserted||MyBoxText|
-|Session||session|
+|Variable|Variable where the ID will be saved|res|
+|Session|Session ID (Optional)|s1|
 
 ### Delete Text
   
 Remove text from an element in a Google Slides presentation with Rocketbot
 |Parameters|Description|example|
 | --- | --- | --- |
-|Presentation ID||1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE|
-|Slide ID||1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE|
-|Element ID of the TextBox||MyText1|
-|Variable where the ID will be saved||Variable|
-|Session||session|
+|Presentation ID|At the URL https//docs.google.com/document/d/{ID}/edit|1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE|
+|Slide ID|At the URL https//docs.google.com/presentation/d/{ID}/edit#slide=id.{SlideID}|SLIDES_API735432223_0|
+|Element ID of the TextBox|If you don't have it, use the 'Get Element Id' command to obtain the element ID to which you want to insert the text|MyText1|
+|Variable|Variable where the ID will be saved|res|
+|Session|Session ID (Optional)|session|
 
 ### Download Slides
   
 Download a Google Slides presentation in PP or PDF format with Rocketbot
 |Parameters|Description|example|
 | --- | --- | --- |
-|Presentation ID||1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE|
-|File format (Slides)||---- Select format ----|
-|Path where to save file||C:\users\usuario\Downloads|
-|Variable where the result will be saved||Variable|
+|Presentation ID|At the URL https//docs.google.com/document/d/{ID}/edit|1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE|
+|File format (Slides)|Choose between PDF or PPTX|---- Select format ----|
+|Path|Path where to save file|C:\users\usuario\Downloads|
+|Variable|Variable where the result will be saved|Variable|
 |Session||session|
 
-### Get Info
+### Get Element ID
   
-Gets the name of the presentation and the elements of the indicated slide
+Gets a list with the ID of each element that has the indicated Slide
 |Parameters|Description|example|
 | --- | --- | --- |
-|Presentation ID||14olZxHX8sQUzUg33h72b-uK32jxC1u3uwsKlw0gEgM0|
-|Index of the slide to obtain||0|
-|Session||session|
-|Variable where the result will be saved||Variable|
+|Presentation ID|At the URL https//docs.google.com/document/d/{ID}/edit|14olZxHX8sQUzUg33h72b-uK32jxC1u3uwsKlw0gEgM0|
+|Index of the slide to obtain|The index must be an integer, note that the first slide is 0|0|
+|Session|Session ID (Optional)|session|
+|Variable|Variable where the result will be saved|Variable|

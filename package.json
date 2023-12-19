@@ -61,6 +61,11 @@
               "en": "Path",
               "pr": "Caminho"
             },
+            "description": {
+              "es": "Ruta al archivo JSON",
+              "en": "Path to JSON file",
+              "pr": "Caminho para arquivo JSON"
+            },
             "id": "credentials_path",
             "css": "col-md-12"
           },
@@ -72,7 +77,7 @@
               "es": "Session",
               "pr": "Session"
             },
-            "help": {
+            "description": {
               "es": "Identificador de sesión (Opcional)",
               "en": "Session ID (Optional)",
               "pr": "ID da sessão (Opcional)"
@@ -83,19 +88,19 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "Variable",
-              "en": "Variable",
-              "pr": "Variável"
+              "es": "res",
+              "en": "res",
+              "pr": "res"
             },
             "title": {
-              "es": "Variable donde se guardará el resultado",
-              "en": "Variable where the result will be saved:",
-              "pr": "Variável onde o resultado será salvo:"
+              "es": "Variable:",
+              "en": "Variable:",
+              "pr": "Variável:"
             },
-            "help": {
-              "es": "Nombre de variable sin {}",
-              "en": "Variable name without {}",
-              "pr": "Nome da variável sem {}"
+            "description": {
+              "es": "Variable donde se guardará el resultado",
+              "en": "Variable where the result will be saved",
+              "pr": "Variável onde o resultado será salvo"
             },
             "remove_vars" : true,
             "id": "result",
@@ -156,19 +161,19 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "Variable",
-              "en": "Variable",
-              "pr": "Variável"
+              "es": "res",
+              "en": "res",
+              "pr": "res"
             },
             "title": {
-              "es": "Variable donde se guardará el ID:",
-              "en": "Variable where the ID will be saved:",
-              "pr": "Variável onde o ID será salvo:"
+              "es": "Variable:",
+              "en": "Variable:",
+              "pr": "Variável:"
             },
-            "help": {
-              "es": "Nombre de variable sin {}",
-              "en": "Variable name without {}",
-              "pr": "Nome da variável sem {}"
+            "description": {
+              "es": "Variable donde se guardará el resultado",
+              "en": "Variable where the result will be saved",
+              "pr": "Variável onde o resultado será salvo"
             },
             "remove_vars" : true,
             "id": "result_var",
@@ -182,7 +187,7 @@
               "es": "Session",
               "pr": "Session"
             },
-            "help": {
+            "description": {
               "es": "Identificador de sesión (Opcional)",
               "en": "Session ID (Optional)",
               "pr": "ID da sessão (Opcional)"
@@ -239,25 +244,30 @@
               "en": "ID of presentation",
               "pr": "ID da apresentação"
             },
+            "description": {
+              "es": "En la URL: https://docs.google.com/presentation/d/{ID}/edit",
+              "en": "At the URL: https://docs.google.com/presentation/d/{ID}/edit",
+              "pr": "No URL: https://docs.google.com/presentation/d/{ID}/edit"
+            },
             "id": "id",
             "css": "col-md-12"
           },
           {
             "type": "input",
             "placeholder": {
-              "es": "Variable",
-              "en": "Variable",
-              "pr": "Variável"
+              "es": "res",
+              "en": "res",
+              "pr": "res"
             },
             "title": {
-              "es": "Variable donde se guardará el resultado:",
-              "en": "Variable where the result will be saved:",
-              "pr": "Variável onde o resultado será salvo:"
+              "es": "Variable:",
+              "en": "Variable:",
+              "pr": "Variável:"
             },
-            "help": {
-              "es": "Nombre de variable sin {}",
-              "en": "Variable name without {}",
-              "pr": "Nome da variável sem {}"
+            "description": {
+              "es": "Variable donde se guardará el resultado",
+              "en": "Variable where the result will be saved",
+              "pr": "Variável onde o resultado será salvo"
             },
             "remove_vars" : true,
             "id": "result",
@@ -271,7 +281,7 @@
               "es": "Session",
               "pr": "Session"
             },
-            "help": {
+            "description": {
               "es": "Identificador de sesión (Opcional)",
               "en": "Session ID (Optional)",
               "pr": "ID da sessão (Opcional)"
@@ -328,25 +338,30 @@
               "en": "ID of presentation",
               "pr": "ID da apresentação"
             },
+            "description": {
+              "es": "En la URL: https://docs.google.com/presentation/d/{ID}/edit",
+              "en": "At the URL: https://docs.google.com/presentation/d/{ID}/edit",
+              "pr": "No URL: https://docs.google.com/presentation/d/{ID}/edit"
+            },
             "id": "id",
             "css": "col-md-10"
           },
           {
             "type": "input",
             "placeholder": {
-              "es": "Variable",
-              "en": "Variable",
-              "pr": "Variável"
+              "es": "res",
+              "en": "res",
+              "pr": "res"
             },
             "title": {
+              "es": "Variable:",
+              "en": "Variable:",
+              "pr": "Variável:"
+            },
+            "description": {
               "es": "Variable donde se guardará el resultado:",
               "en": "Variable where the result will be saved:",
               "pr": "Variável onde o resultado será salvo:"
-            },
-            "help": {
-              "es": "Nombre de variable sin {}",
-              "en": "Variable name without {}",
-              "pr": "Nome da variável sem {}"
             },
             "remove_vars" : true,
             "id": "result_var",
@@ -360,7 +375,7 @@
               "es": "Session",
               "pr": "Session"
             },
-            "help": {
+            "description": {
               "es": "Identificador de sesión (Opcional)",
               "en": "Session ID (Optional)",
               "pr": "ID da sessão (Opcional)"
@@ -417,6 +432,11 @@
               "en": "Presentation ID",
               "pr": "ID da Apresentação"
             },
+            "description": {
+              "es": "En la URL: https://docs.google.com/presentation/d/{ID}/edit",
+              "en": "At the URL: https://docs.google.com/presentation/d/{ID}/edit",
+              "pr": "No URL: https://docs.google.com/presentation/d/{ID}/edit"
+            },
             "id": "p_id",
             "css": "col-md-12"
           },
@@ -428,7 +448,7 @@
               "es": "Session",
               "pr": "Session"
             },
-            "help": {
+            "description": {
               "es": "Identificador de sesión (Opcional)",
               "en": "Session ID (Optional)",
               "pr": "ID da sessão (Opcional)"
@@ -439,11 +459,16 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "Variable",
-              "en": "Variable",
-              "pr": "Variável"
+              "es": "res",
+              "en": "res",
+              "pr": "res"
             },
             "title": {
+              "es": "Variable:",
+              "en": "Variable:",
+              "pr": "Variável:"
+            },
+            "description": {
               "es": "Variable donde se guardará el resultado:",
               "en": "Variable where the result will be saved:",
               "pr": "Variável onde o resultado será salvo:"
@@ -501,6 +526,11 @@
               "en": "Presentation ID",
               "pr": "ID da Apresentação"
             },
+            "description": {
+              "es": "En la URL: https://docs.google.com/presentation/d/{ID}/edit",
+              "en": "At the URL: https://docs.google.com/presentation/d/{ID}/edit",
+              "pr": "No URL: https://docs.google.com/presentation/d/{ID}/edit"
+            },
             "id": "id",
             "css": "col-md-12"
           },
@@ -516,6 +546,11 @@
               "en": "Slide ID",
               "pr": "Slide ID"
             },
+            "description": {
+              "es": "En la URL: https://docs.google.com/presentation/d/{ID}/edit#slide=id.{SlideID}",
+              "en": "At the URL: https://docs.google.com/presentation/d/{ID}/edit#slide=id.{SlideID}",
+              "pr": "No URL: https://docs.google.com/presentation/d/{ID}/edit#slide=id.{SlideID}"
+            },
             "id": "slide",
             "css": "col-md-10"
           },
@@ -527,7 +562,7 @@
               "es": "Session",
               "pr": "Session"
             },
-            "help": {
+            "description": {
               "es": "Identificador de sesión (Opcional)",
               "en": "Session ID (Optional)",
               "pr": "ID da sessão (Opcional)"
@@ -538,11 +573,16 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "Variable",
-              "en": "Variable",
-              "pr": "Variável"
+              "es": "res",
+              "en": "res",
+              "pr": "res"
             },
             "title": {
+              "es": "Variable:",
+              "en": "Variable:",
+              "pr": "Variável:"
+            },
+            "description": {
               "es": "Variable donde se guardará el resultado:",
               "en": "Variable where the result will be saved:",
               "pr": "Variável onde o resultado será salvo:"
@@ -600,20 +640,30 @@
               "en": "Presentation ID",
               "pr": "ID da Apresentação"
             },
+            "description": {
+              "es": "En la URL: https://docs.google.com/document/d/{ID}/edit",
+              "en": "At the URL: https://docs.google.com/document/d/{ID}/edit",
+              "pr": "No URL: https://docs.google.com/document/d/{ID}/edit"
+            },
             "id": "presentation",
             "css": "col-md-12"
           },
           {
             "type": "input",
             "placeholder": {
-              "es": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
-              "en": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
-              "pr": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE"
+              "es": "SLIDES_API735432223_0",
+              "en": "SLIDES_API735432223_0",
+              "pr": "SLIDES_API735432223_0"
             },
             "title": {
               "es": "ID de la diapositiva",
               "en": "Slide ID",
               "pr": "ID do slide"
+            },
+            "description": {
+              "es": "En la URL: https://docs.google.com/presentation/d/{ID}/edit#slide=id.{SlideID}",
+              "en": "At the URL: https://docs.google.com/presentation/d/{ID}/edit#slide=id.{SlideID}",
+              "pr": "No URL: https://docs.google.com/presentation/d/{ID}/edit#slide=id.{SlideID}"
             },
             "id": "page",
             "css": "col-md-12"
@@ -621,14 +671,19 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "Texto a insertar",
-              "en": "Text to insert",
-              "pr": "Texto para inserir"
+              "es": "Hola!",
+              "en": "Hello!",
+              "pr": "Ola!"
             },
             "title": {
               "es": "Texto",
               "en": "Text",
               "pr": "Texto"
+            },
+            "description": {
+              "es": "Texto a insertar",
+              "en": "Text to insert",
+              "pr": "Texto para inserir"
             },
             "id": "text",
             "css": "col-md-12"
@@ -838,11 +893,16 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "Variable",
-              "en": "Variable",
-              "pr": "Variável"
+              "es": "res",
+              "en": "res",
+              "pr": "res"
             },
             "title": {
+              "es": "Variable:",
+              "en": "Variable:",
+              "pr": "Variável:"
+            },
+            "description": {
               "es": "Variable donde se guardará el ID:",
               "en": "Variable where the ID will be saved:",
               "pr": "Variável onde o ID será salvo:"
@@ -863,6 +923,11 @@
               "en": "Text Identifier",
               "pr": "Identificador de texto"
             },
+            "description": {
+              "es": "Identificador que funcionará como Element ID",
+              "en": "Identifier that will function as Element ID",
+              "pr": "Identificador que funcionará como Element ID"
+            },
             "id": "element_id",
             "css": "col-md-10"
           },
@@ -874,7 +939,7 @@
               "es": "Session",
               "pr": "Session"
             },
-            "help": {
+            "description": {
               "es": "Identificador de sesión (Opcional)",
               "en": "Session ID (Optional)",
               "pr": "ID da sessão (Opcional)"
@@ -931,20 +996,30 @@
               "en": "Presentation ID",
               "pr": "ID da Apresentação"
             },
+            "description": {
+              "es": "En la URL: https://docs.google.com/document/d/{ID}/edit",
+              "en": "At the URL: https://docs.google.com/document/d/{ID}/edit",
+              "pr": "No URL: https://docs.google.com/document/d/{ID}/edit"
+            },
             "id": "presentation",
             "css": "col-md-12"
           },
           {
             "type": "input",
             "placeholder": {
-              "es": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
-              "en": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
-              "pr": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE"
+              "es": "SLIDES_API735432223_0",
+              "en": "SLIDES_API735432223_0",
+              "pr": "SLIDES_API735432223_0"
             },
             "title": {
               "es": "ID de la diapositiva",
               "en": "Slide ID",
               "pr": "ID do slide"
+            },
+            "description": {
+              "es": "En la URL: https://docs.google.com/presentation/d/{ID}/edit#slide=id.{SlideID}",
+              "en": "At the URL: https://docs.google.com/presentation/d/{ID}/edit#slide=id.{SlideID}",
+              "pr": "No URL: https://docs.google.com/presentation/d/{ID}/edit#slide=id.{SlideID}"
             },
             "id": "page",
             "css": "col-md-12"
@@ -952,14 +1027,39 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "Texto a insertar",
-              "en": "Text to insert",
-              "pr": "Texto para inserir"
+              "es": "SLIDES_API1561945157_2",
+              "en": "SLIDES_API1561945157_2",
+              "pr": "SLIDES_API1561945157_2"
+            },
+            "title": {
+              "es": "ID del Elemento",
+              "en": "Element ID",
+              "pr": "Element ID"
+            },
+            "description": {
+              "es": "Ocupar el comando 'Obtener Element ID' para obtener el ID del elemento al que se quiere insertar el texto",
+              "en": "Use the 'Get Element Id' command to obtain the element ID to which you want to insert the text",
+              "pr": "Utilize o comando 'Obter Element Id' para obter o ID do elemento no qual deseja inserir o texto"
+            },
+            "id": "element_id",
+            "css": "col-md-10"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Hola!",
+              "en": "Hello!",
+              "pr": "Ola!"
             },
             "title": {
               "es": "Texto",
               "en": "Text",
               "pr": "Texto"
+            },
+            "description": {
+              "es": "Texto a insertar",
+              "en": "Text to insert",
+              "pr": "Texto para inserir"
             },
             "id": "text",
             "css": "col-md-12"
@@ -1169,11 +1269,16 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "Variable",
-              "en": "Variable",
-              "pr": "Variável"
+              "es": "res",
+              "en": "res",
+              "pr": "res"
             },
             "title": {
+              "es": "Variable:",
+              "en": "Variable:",
+              "pr": "Variável:"
+            },
+            "description": {
               "es": "Variable donde se guardará el ID:",
               "en": "Variable where the ID will be saved:",
               "pr": "Variável onde o ID será salvo:"
@@ -1185,27 +1290,16 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "MiCajaDeTexto",
-              "en": "MyBoxText",
-              "pr": "MinhaCaixadeTexto"
+              "es": "s1",
+              "en": "s1",
+              "pr": "s1"
             },
-            "title": {
-              "es": "ID del Elemento al que se le insertará el Texto",
-              "en": "ID of the Element to which the Text will be inserted",
-              "pr": "ID do Elemento ao qual o Texto será inserido"
-            },
-            "id": "element_id",
-            "css": "col-md-10"
-          },
-          {
-            "type": "input",
-            "placeholder": "session",
             "title": {
               "en": "Session",
               "es": "Session",
               "pr": "Session"
             },
-            "help": {
+            "description": {
               "es": "Identificador de sesión (Opcional)",
               "en": "Session ID (Optional)",
               "pr": "ID da sessão (Opcional)"
@@ -1262,20 +1356,30 @@
               "en": "Presentation ID",
               "pr": "ID da Apresentação"
             },
+            "description": {
+              "es": "En la URL: https://docs.google.com/document/d/{ID}/edit",
+              "en": "At the URL: https://docs.google.com/document/d/{ID}/edit",
+              "pr": "No URL: https://docs.google.com/document/d/{ID}/edit"
+            },
             "id": "p_id",
             "css": "col-md-12"
           },
           {
             "type": "input",
             "placeholder": {
-              "es": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
-              "en": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE",
-              "pr": "1M1YsqIRAaQnjWcSYjinLiaChD_Jv_zcKohLMs0G_0sE"
+              "es": "SLIDES_API735432223_0",
+              "en": "SLIDES_API735432223_0",
+              "pr": "SLIDES_API735432223_0"
             },
             "title": {
               "es": "ID de la diapositiva",
               "en": "Slide ID",
               "pr": "ID do slide"
+            },
+            "description": {
+              "es": "En la URL: https://docs.google.com/presentation/d/{ID}/edit#slide=id.{SlideID}",
+              "en": "At the URL: https://docs.google.com/presentation/d/{ID}/edit#slide=id.{SlideID}",
+              "pr": "No URL: https://docs.google.com/presentation/d/{ID}/edit#slide=id.{SlideID}"
             },
             "id": "s_id",
             "css": "col-md-12"
@@ -1292,17 +1396,27 @@
               "en": "Element ID of the TextBox",
               "pr": "ID do Elemento que contém o texto"
             },
+            "description": {
+              "es": "De no tenerlo, ocupar el comando 'Obtener Element ID' para obtener el ID del elemento al que se quiere insertar el texto",
+              "en": "If you don't have it, use the 'Get Element Id' command to obtain the element ID to which you want to insert the text",
+              "pr": "Se você não tem, utilize o comando 'Obter Element Id' para obter o ID do elemento no qual deseja inserir o texto"
+            },
             "id": "object_id",
             "css": "col-md-10"
           },
           {
             "type": "input",
             "placeholder": {
-              "es": "Variable",
-              "en": "Variable",
-              "pr": "Variável"
+              "es": "res",
+              "en": "res",
+              "pr": "res"
             },
             "title": {
+              "es": "Variable:",
+              "en": "Variable:",
+              "pr": "Variável:"
+            },
+            "description": {
               "es": "Variable donde se guardará el ID:",
               "en": "Variable where the ID will be saved:",
               "pr": "Variável onde o ID será salvo:"
@@ -1319,7 +1433,7 @@
               "es": "Session",
               "pr": "Session"
             },
-            "help": {
+            "description": {
               "es": "Identificador de sesión (Opcional)",
               "en": "Session ID (Optional)",
               "pr": "ID da sessão (Opcional)"
@@ -1376,6 +1490,11 @@
               "en": "Presentation ID",
               "pr": "ID da Apresentação"
             },
+            "description": {
+              "es": "En la URL: https://docs.google.com/document/d/{ID}/edit",
+              "en": "At the URL: https://docs.google.com/document/d/{ID}/edit",
+              "pr": "No URL: https://docs.google.com/document/d/{ID}/edit"
+            },
             "id": "p_id",
             "css": "col-md-12"
           },
@@ -1390,6 +1509,11 @@
               "es": "Formato del archivo (Slides)",
               "en": "File format (Slides)",
               "pr": "Formato de arquivo (Slides)"
+            },
+            "description": {
+              "es": "Elige entre PDF o PPTX",
+              "en": "Choose between PDF or PPTX",
+              "pr": "Escolha entre PDF ou PPTX"
             },
             "options": [
               {
@@ -1416,6 +1540,11 @@
               "pr": "C:\\users\\usuario\\Downloads"
             },
             "title": {
+              "es": "Ruta:",
+              "en": "Path:",
+              "pr": "Caminho:"
+            },
+            "description": {
               "es": "Ruta donde guardar archivo",
               "en": "Path where to save file",
               "pr": "Caminho onde salvar o arquivo"
@@ -1431,6 +1560,11 @@
               "pr": "Variável"
             },
             "title": {
+              "es": "Variable:",
+              "en": "Variable:",
+              "pr": "Variável:"
+            },
+            "description": {
               "es": "Variable donde se guardará el resultado:",
               "en": "Variable where the result will be saved:",
               "pr": "Variável onde o resultado será salvo:"
@@ -1472,20 +1606,20 @@
     },
     {
       "en": {
-        "title": "Get Info",
-        "description": "Gets the name of the presentation and the elements of the indicated slide",
+        "title": "Get Element ID",
+        "description": "Gets a list with the ID of each element that has the indicated Slide",
         "title_options": null,
         "options": null
       },
       "es": {
-        "title": "Obtener Info",
-        "description": "Obtiene el nombre de la presentación y los elementos de la diapositiva indicada",
+        "title": "Obtener Element ID",
+        "description": "Obtiene una lista con el ID de cada elemento que tiene la diapositiva indicada",
         "title_options": null,
         "options": null
       },
       "pr": {
-        "title": "Obter Info",
-        "description": "Obtém o nome da apresentação e os elementos do slide indicado",
+        "title": "Obter Element ID",
+        "description": "Obtém uma lista com o ID de cada elemento que possui o Side indicado",
         "title_options": null,
         "options": null
       },
@@ -1504,6 +1638,11 @@
               "en": "Presentation ID",
               "pr": "ID da Apresentação"
             },
+            "description": {
+              "es": "En la URL: https://docs.google.com/document/d/{ID}/edit",
+              "en": "At the URL: https://docs.google.com/document/d/{ID}/edit",
+              "pr": "No URL: https://docs.google.com/document/d/{ID}/edit"
+            },
             "id": "p_id",
             "css": "col-md-12"
           },
@@ -1519,7 +1658,7 @@
               "en": "Index of the slide to obtain",
               "pr": "Índice do slide para obter"
             },
-            "help": {
+            "description": {
               "es": "El índice debe ser un entero, tener en cuenta que la primer diapositiva es 0",
               "en": "The index must be an integer, note that the first slide is 0",
               "pr": "O índice deve ser um número inteiro, observe que o primeiro slide é 0"
@@ -1535,7 +1674,7 @@
               "es": "Session",
               "pr": "Session"
             },
-            "help": {
+            "description": {
               "es": "Identificador de sesión (Opcional)",
               "en": "Session ID (Optional)",
               "pr": "ID da sessão (Opcional)"
@@ -1551,6 +1690,11 @@
               "pr": "Variável"
             },
             "title": {
+              "es": "Variable:",
+              "en": "Variable:",
+              "pr": "Variável:"
+            },
+            "description": {
               "es": "Variable donde se guardará el resultado:",
               "en": "Variable where the result will be saved:",
               "pr": "Variável onde o resultado será salvo:"
