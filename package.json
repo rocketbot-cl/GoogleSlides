@@ -1,6 +1,6 @@
 {
   "author": "Corina Suárez",
-  "description": "Module to use Google Slides | Módulo para usar Google Slides",
+  "description": "Module to use Google Slides",
   "description_lang":{
     "en": "This module allows you to create, write and update Google Slides. You can add or remove slides and text on them; download the presentation in various formats; and more.",
     "es": "Este módulo le permite crear, escribir y actualizar presentaciones de Google. Puede agregar o eliminar diapositivas y texto en ellas; descargar la presentación en varios formatos; y más.",
